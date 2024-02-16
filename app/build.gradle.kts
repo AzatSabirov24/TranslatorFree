@@ -1,7 +1,9 @@
+@Suppress("DSL_SCOPE_VIOLATION")
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
-    alias(libs.plugins.ksp)
+    id("dagger.hilt.android.plugin")
+    id("com.google.devtools.ksp")
 }
 
 android {
@@ -58,6 +60,13 @@ dependencies {
 
     // ktor
     implementation(libs.bundles.ktor)
+
+    // hilt
+    implementation(libs.hiltAndroid)
+    implementation(libs.hiltNavigationCompose)
+    implementation(libs.hiltAgp)
+    ksp(libs.hiltAndroidCompiler)
+
 
     // testing
     testImplementation(libs.junit)
