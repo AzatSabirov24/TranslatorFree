@@ -1,21 +1,19 @@
-@Suppress("DSL_SCOPE_VIOLATION")
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
-    id("dagger.hilt.android.plugin")
-    id("com.google.devtools.ksp")
+    alias(libs.plugins.ksp)
 }
 
 android {
     namespace = "com.asabirov.translatorfree"
-    compileSdk = 34
+    compileSdk = libs.versions.compileSdk.get().toInt()
 
     defaultConfig {
         applicationId = "com.asabirov.translatorfree"
-        minSdk = 26
-        targetSdk = 34
-        versionCode = 1
-        versionName = "1.0"
+        minSdk = libs.versions.minSdk.get().toInt()
+        targetSdk = libs.versions.targetSdk.get().toInt()
+        versionCode = libs.versions.versionCode.get().toInt()
+        versionName = libs.versions.versionName.get()
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
@@ -62,15 +60,11 @@ dependencies {
     implementation(libs.bundles.ktor)
 
     // hilt
-    implementation(libs.hiltAndroid)
-    implementation(libs.hiltNavigationCompose)
-    implementation(libs.hiltAgp)
-    ksp(libs.hiltAndroidCompiler)
-
+    implementation(libs.bundles.hilt)
+    ksp(libs.hilt.android.compiler)
 
     // testing
     testImplementation(libs.junit)
     androidTestImplementation(libs.test.ext.junit)
     androidTestImplementation(libs.espresso.core)
-
 }
