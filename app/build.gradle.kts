@@ -52,6 +52,10 @@ android {
 
 dependencies {
 
+    implementation(project(":core_ui"))
+    implementation(project(":core"))
+    implementation(project(":feature:translation"))
+
     // compose
     implementation(platform(libs.androidx.compose.bom))
     implementation(libs.bundles.compose)

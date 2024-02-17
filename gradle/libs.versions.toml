@@ -29,6 +29,9 @@ kotlinDateTime = "0.4.0"
 junit = "4.13.2"
 testExtJunit = "1.1.5"
 espressoCore = "3.5.1"
+core-ktx = "1.12.0"
+appcompat = "1.6.1"
+material = "1.11.0"
 
 [libraries]
 # compose
@@ -60,6 +63,9 @@ kotlin-date-time = { group = "org.jetbrains.kotlinx", name = "kotlinx-datetime",
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 test-ext-junit = { group = "androidx.test.ext", name = "junit", version.ref = "testExtJunit" }
 espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
+core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "core-ktx" }
+appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 
 [plugins]
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
