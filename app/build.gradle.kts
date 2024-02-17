@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.ksp)
+    alias(libs.plugins.hilt.gradle.plugin)
 }
 
 android {
@@ -61,7 +62,7 @@ dependencies {
     implementation(libs.bundles.compose)
 
     // ktor
-    implementation(libs.bundles.ktor)
+    api(libs.bundles.ktor)
 
     // hilt
     implementation(libs.bundles.hilt)

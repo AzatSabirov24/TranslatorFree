@@ -15,4 +15,7 @@ dependencies {
     // Compose
     implementation(platform(libs.androidx.compose.bom))
     implementation(libs.bundles.compose)
+
+    // ktor
+    implementation(libs.bundles.ktor)
 }
