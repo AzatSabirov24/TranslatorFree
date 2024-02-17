@@ -63,6 +63,9 @@ dependencies {
     implementation(libs.bundles.hilt)
     ksp(libs.hilt.android.compiler)
 
+    // kotlin date time
+    implementation(libs.kotlin.date.time)
+
     // testing
     testImplementation(libs.junit)
     androidTestImplementation(libs.test.ext.junit)

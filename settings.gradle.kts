@@ -15,3 +15,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "TranslatorFree"
 include(":app")
+include(":core_ui")

@@ -22,6 +22,9 @@ ktor = "2.3.7"
 hilt = "2.50"
 hiltNavigationComposeVersion = "1.1.0"
 
+# kotlin date time
+kotlinDateTime = "0.4.0"
+
 # testing
 junit = "4.13.2"
 testExtJunit = "1.1.5"
@@ -37,6 +40,7 @@ androidx-ui-graphics = { group = "androidx.compose.ui", name = "ui-graphics" }
 androidx-ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling" }
 androidx-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview" }
 androidx-compose-foundation = { group = "androidx.compose.foundation", name = "foundation" }
+androidx-compose-icons-extended = { group = "androidx.compose.material", name = "material-icons-extended" }
 
 #ktor
 ktor-core = { group = "io.ktor", name = "ktor-client-core", version.ref = "ktor" }
@@ -49,6 +53,9 @@ hilt-android = { group = "com.google.dagger", name = "hilt-android", version.ref
 hilt-android-compiler = { group = "com.google.dagger", name = "hilt-android-compiler", version.ref = "hilt" }
 hilt-navigation-compose = { group = "androidx.hilt", name = "hilt-navigation-compose", version.ref = "hiltNavigationComposeVersion" }
 
+# kotlin date time
+kotlin-date-time = { group = "org.jetbrains.kotlinx", name = "kotlinx-datetime", version.ref = "kotlinDateTime" }
+
 # testing
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 test-ext-junit = { group = "androidx.test.ext", name = "junit", version.ref = "testExtJunit" }
@@ -59,6 +66,7 @@ kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 android-application = { id = "com.android.application", version.ref = "androidGradlePlugin" }
 ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
 hilt-gradle-plugin = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
+kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
 
 [bundles]
 compose = [
@@ -68,7 +76,8 @@ compose = [
     "androidx-ui-graphics",
     "androidx-ui-tooling",
     "androidx-ui-tooling-preview",
-    "androidx-compose-foundation"
+    "androidx-compose-foundation",
+    "androidx-compose-icons-extended"
 ]
 ktor = [
     "ktor-core",
