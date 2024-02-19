@@ -1,4 +1,4 @@
-package com.asabirov.core_ui.color
+package com.asabirov.core_ui.colors
 
 object Colors {
     const val LightBlue = 0xFFA8A5BB
