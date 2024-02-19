@@ -18,4 +18,7 @@ dependencies {
 
     // ktor
     implementation(libs.bundles.ktor)
+
+    // coil
+    implementation(libs.coil.compose)
 }

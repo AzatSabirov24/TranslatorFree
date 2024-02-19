@@ -69,7 +69,7 @@ dependencies {
     ksp(libs.hilt.android.compiler)
 
     // kotlin date time
-    implementation(libs.kotlin.date.time)
+//    implementation(libs.kotlin.date.time)
 
     // testing
     testImplementation(libs.junit)
