@@ -10,7 +10,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import com.asabirov.translation.presentation.model.UiLanguage
-import com.asabirov.translator.android.translate.presentation.components.SmallLanguageIcon
 
 @Composable
 fun LanguageDisplay(
