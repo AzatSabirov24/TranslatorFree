@@ -1,6 +1,6 @@
 package com.asabirov.translation.domain
 
-import com.asabirov.core.language.Language
+import com.asabirov.translation.presentation.model.Language
 
 interface TranslationClient {
 

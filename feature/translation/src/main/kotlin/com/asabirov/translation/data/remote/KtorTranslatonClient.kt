@@ -1,11 +1,11 @@
 package com.asabirov.translation.data.remote
 
 import com.asabirov.core.network.NetworkConstants
-import com.asabirov.core.network.TranslateException
-import com.asabirov.core.language.Language
 import com.asabirov.core.network.NetworkError
+import com.asabirov.core.network.TranslateException
 import com.asabirov.translation.data.remote.dto.TranslatedDto
 import com.asabirov.translation.domain.TranslationClient
+import com.asabirov.translation.presentation.model.Language
 import com.asabirov.translator.translate.data.translate.TranslateDto
 import io.ktor.client.HttpClient
 import io.ktor.client.call.body

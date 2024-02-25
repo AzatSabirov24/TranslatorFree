@@ -36,6 +36,10 @@ core-ktx = "1.12.0"
 appcompat = "1.6.1"
 material = "1.11.0"
 
+# sqlDelight
+sqlDelight = "1.5.5"
+sqlDelightGradlePlugin = "1.5.5"
+
 [libraries]
 # compose
 androidx-compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "composeBom" }
@@ -60,7 +64,7 @@ hilt-android-compiler = { group = "com.google.dagger", name = "hilt-android-comp
 hilt-navigation-compose = { group = "androidx.hilt", name = "hilt-navigation-compose", version.ref = "hiltNavigationCompose" }
 
 # kotlin date time
-# kotlin-date-time = { group = "org.jetbrains.kotlinx", name = "kotlinx-datetime", version.ref = "kotlinDateTime" }
+kotlin-date-time = { group = "org.jetbrains.kotlinx", name = "kotlinx-datetime", version.ref = "kotlinDateTime" }
 
 # coil
 coil-compose = { group = "io.coil-kt", name = "coil-compose", version.ref = "coilCompose" }
@@ -73,6 +77,12 @@ core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "core-ktx
 appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 
+# sqlDelight
+#sqlDelightRuntime = { group = "com.squareup.sqldelight", name = "runtime", version.ref = "sqlDelight" }
+sqlDelightAndroidDriver = { group = "com.squareup.sqldelight", name = "android-driver", version.ref = "sqlDelight" }
+#sqlDelightNativeDriver = { group = "com.squareup.sqldelight", name = "native-driver", version.ref = "sqlDelight" }
+sqlDelightCoroutinesExtensions = { group = "com.squareup.sqldelight", name = "coroutines-extensions", version.ref = "sqlDelight" }
+
 [plugins]
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 android-application = { id = "com.android.application", version.ref = "androidGradlePlugin" }
@@ -80,6 +90,7 @@ android-library = { id = "com.android.library", version.ref = "androidGradlePlug
 ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
 hilt-gradle-plugin = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
 kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
+sql-delight-gradle-plugin = { id = "com.squareup.sqldelight", version.ref = "sqlDelightGradlePlugin" }
 
 [bundles]
 compose = [
@@ -106,4 +117,10 @@ testing = [
     "junit",
     "test-ext-junit",
     "espresso-core"
+]
+sqlDelight = [
+    #    "sqlDelightRuntime",
+    "sqlDelightAndroidDriver",
+    #    "sqlDelightNativeDriver",
+    "sqlDelightCoroutinesExtensions"
 ]

@@ -3,6 +3,7 @@ plugins {
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.ksp)
     alias(libs.plugins.hilt.gradle.plugin)
+    alias(libs.plugins.sql.delight.gradle.plugin)
 }
 
 android {
@@ -69,7 +70,10 @@ dependencies {
     ksp(libs.hilt.android.compiler)
 
     // kotlin date time
-//    implementation(libs.kotlin.date.time)
+    implementation(libs.kotlin.date.time)
+
+    // sqlDelight
+    implementation(libs.bundles.sqlDelight)
 
     // testing
     testImplementation(libs.junit)
