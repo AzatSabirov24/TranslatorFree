@@ -4,6 +4,7 @@ plugins {
     alias(libs.plugins.ksp)
     alias(libs.plugins.hilt.gradle.plugin)
     alias(libs.plugins.sql.delight.gradle.plugin)
+    alias(libs.plugins.kotlinx.serialization)
 }
 
 android {
