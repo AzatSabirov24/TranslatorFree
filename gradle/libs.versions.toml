@@ -13,7 +13,7 @@ androidGradlePlugin = "8.2.2"
 ksp = "1.9.22-1.0.17"
 
 # compose
-composeBom = "2024.02.00"
+composeBom = "2024.02.01"
 
 # ktor
 ktor = "2.3.7"
