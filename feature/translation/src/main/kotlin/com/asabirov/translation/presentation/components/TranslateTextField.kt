@@ -197,7 +197,7 @@ private fun IdleTranslateTextField(
                 text = stringResource(
                     id = R.string.enter_a_text_to_translate
                 ),
-                color = Color.Blue
+                color = MaterialTheme.colorScheme.onSurface
             )
         }
         ProgressButton(
