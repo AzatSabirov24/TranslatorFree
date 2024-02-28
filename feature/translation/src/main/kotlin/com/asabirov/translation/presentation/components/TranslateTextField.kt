@@ -30,7 +30,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.focus.onFocusChanged
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.stringResource
@@ -125,14 +124,14 @@ private fun TranslatedTextField(
                 Icon(
                     imageVector = ImageVector.vectorResource(id = R.drawable.copy),
                     contentDescription = stringResource(id = R.string.copy),
-                    tint = Color.Blue
+                    tint = MaterialTheme.colorScheme.onSurface
                 )
             }
             IconButton(onClick = onCloseClick) {
                 Icon(
                     imageVector = Icons.Rounded.Close,
                     contentDescription = stringResource(id = R.string.close),
-                    tint = Color.Blue
+                    tint = MaterialTheme.colorScheme.onSurface
                 )
             }
         }
@@ -155,14 +154,14 @@ private fun TranslatedTextField(
                 Icon(
                     imageVector = ImageVector.vectorResource(id = R.drawable.copy),
                     contentDescription = stringResource(id = R.string.copy),
-                    tint = Color.Blue
+                    tint = MaterialTheme.colorScheme.onSurface
                 )
             }
             IconButton(onClick = onSpeakerClick) {
                 Icon(
                     imageVector = ImageVector.vectorResource(id = R.drawable.speaker),
                     contentDescription = stringResource(id = R.string.play_loud),
-                    tint = Color.Blue
+                    tint = MaterialTheme.colorScheme.onSurface
                 )
             }
         }
