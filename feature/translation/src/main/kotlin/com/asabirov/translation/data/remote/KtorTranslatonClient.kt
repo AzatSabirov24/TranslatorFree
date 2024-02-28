@@ -3,10 +3,11 @@ package com.asabirov.translation.data.remote
 import com.asabirov.core.network.NetworkConstants
 import com.asabirov.core.network.NetworkError
 import com.asabirov.core.network.TranslateException
+import com.asabirov.translation.data.remote.dto.TranslateDto
 import com.asabirov.translation.data.remote.dto.TranslatedDto
+import com.asabirov.translation.data.remote.dto.TranslatedResponseDto
 import com.asabirov.translation.domain.TranslationClient
 import com.asabirov.translation.presentation.model.Language
-import com.asabirov.translator.translate.data.translate.TranslateDto
 import io.ktor.client.HttpClient
 import io.ktor.client.call.body
 import io.ktor.client.request.post
@@ -24,15 +25,18 @@ class KtorTranslationClient(
         fromLanguage: Language,
         fromText: String,
         toLanguage: Language
-    ): String {
+    ): TranslatedDto {
         val result = try {
+//            httpClient.sendPipeline.intercept(HttpSendPipeline.S) {
+//                context.headers.append("key", "AIzaSyB6U7GfHE4Wn2UpUmTd7QHM68CyMzKqC98")
+//            }
             httpClient.post {
-                url(NetworkConstants.BASE_URL + "/translate")
+                url(NetworkConstants.BASE_URL + "/language/translate/v2?key=")
+//                header("key", "AIzaSyB6U7GfHE4Wn2UpUmTd7QHM68CyMzKqC98")
                 contentType(ContentType.Application.Json)
                 setBody(
                     TranslateDto(
                         textToTranslate = fromText,
-                        sourceLanguageCode = fromLanguage.langCode,
                         targetLanguageCode = toLanguage.langCode
                     )
                 )
@@ -49,8 +53,9 @@ class KtorTranslationClient(
         }
 
         return try {
-            result.body<TranslatedDto>().translatedText
+            result.body<TranslatedResponseDto>().data.translations.first()
         } catch (e: Exception) {
+            println("qqq KtorTranslationClient->translate->${e.message}")
             throw TranslateException(error = NetworkError.SERVER_ERROR)
         }
     }

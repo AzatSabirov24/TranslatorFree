@@ -3,7 +3,6 @@ package com.asabirov.translation.data.remote.dto
 import kotlinx.serialization.Serializable
 
 @Serializable
-data class TranslatedDto(
-    val translatedText: String,
-    val detectedSourceLanguage: String? = null,
+data class TranslatedResponseDto(
+    val data: TranslationsDto
 )

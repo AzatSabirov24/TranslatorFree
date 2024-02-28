@@ -5,6 +5,8 @@ plugins {
     alias(libs.plugins.hilt.gradle.plugin)
     alias(libs.plugins.sql.delight.gradle.plugin)
     alias(libs.plugins.kotlinx.serialization)
+
+    id("com.google.android.libraries.mapsplatform.secrets-gradle-plugin")
 }
 
 android {
@@ -42,6 +44,7 @@ android {
     }
     buildFeatures {
         compose = true
+        buildConfig = true
     }
     composeOptions {
         kotlinCompilerExtensionVersion = "1.5.9"

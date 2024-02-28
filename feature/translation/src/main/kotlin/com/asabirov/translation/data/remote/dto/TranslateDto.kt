@@ -1,4 +1,4 @@
-package com.asabirov.translator.translate.data.translate
+package com.asabirov.translation.data.remote.dto
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
@@ -8,7 +8,7 @@ data class TranslateDto(
     @SerialName("q")
     val textToTranslate: String,
     @SerialName("source")
-    val sourceLanguageCode: String,
+    val sourceLanguageCode: String? = null,
     @SerialName("target")
     val targetLanguageCode: String
 )

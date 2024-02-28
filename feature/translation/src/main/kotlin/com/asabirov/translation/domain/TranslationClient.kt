@@ -1,5 +1,6 @@
 package com.asabirov.translation.domain
 
+import com.asabirov.translation.data.remote.dto.TranslatedDto
 import com.asabirov.translation.presentation.model.Language
 
 interface TranslationClient {
@@ -8,5 +9,5 @@ interface TranslationClient {
         fromLanguage: Language,
         fromText: String,
         toLanguage: Language
-    ): String
+    ): TranslatedDto
 }

@@ -2,6 +2,7 @@ package com.asabirov.translation.domain
 
 import com.asabirov.core.Resource
 import com.asabirov.core.network.TranslateException
+import com.asabirov.translation.data.remote.dto.TranslatedDto
 import com.asabirov.translation.domain.history.HistoryDataSource
 import com.asabirov.translation.domain.history.HistoryItem
 import com.asabirov.translation.presentation.model.Language
@@ -15,9 +16,9 @@ class Translate(
         fromLanguage: Language,
         fromText: String,
         toLanguage: Language
-    ): Resource<String> {
+    ): Resource<TranslatedDto> {
         return try {
-            val translatedText = client.translate(
+            val translated = client.translate(
                 fromLanguage, fromText, toLanguage
             )
             historyDataSource.insertHistoryItem(
@@ -26,10 +27,10 @@ class Translate(
                     fromLanguageCode = fromLanguage.langCode,
                     fromText = fromText,
                     toLanguageCode = toLanguage.langCode,
-                    toText = translatedText,
+                    toText = translated.translatedText,
                 )
             )
-            Resource.Success(translatedText)
+            Resource.Success(translated)
         } catch(e: TranslateException) {
             e.printStackTrace()
             Resource.Error(e)

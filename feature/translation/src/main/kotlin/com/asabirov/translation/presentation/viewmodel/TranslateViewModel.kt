@@ -188,7 +188,7 @@ class TranslateViewModel(
                     _state.update {
                         it.copy(
                             isTranslating = false,
-                            toText = result.data
+                            toText = result.data?.translatedText
                         )
                     }
                 }
